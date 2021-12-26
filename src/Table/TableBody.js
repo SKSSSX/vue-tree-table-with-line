@@ -380,7 +380,7 @@ export default {
                   class={`${this.prefixCls}--tree-level1-line`}
                   style={{
                     marginLeft: `${(row._level - 1) * 24}px`,
-                    left: `${(row._level - 2) * (-24) - 5}px`,
+                    left: `${((row._level - 2) * (-24)) - 5}px`,
                   }}
                 />
               )}
@@ -390,7 +390,7 @@ export default {
                 <i
                   class={`${this.prefixCls}--tree-level2-line`}
                   style={{
-                    left: `${(row._level - 2) * 22 - 1}px`,
+                    left: `${((row._level - 2) * 22) - 1}px`,
                   }}
                 />
               )}
@@ -402,7 +402,7 @@ export default {
                 <i
                   class={`${this.prefixCls}--tree-level2-line`}
                   style={{
-                    left: `${(row._level - 3) * 22 - 1}px`,
+                    left: `${((row._level - 3) * 22) - 1}px`,
                   }}
                 />
               )}
@@ -416,8 +416,8 @@ export default {
                   style={{
                     left:
                       row._level < 6
-                        ? `${(row._level - 3) * 22 - 1}px`
-                        : `${(row._level - 4) * 22 - 1}px`,
+                        ? `${((row._level - 3) * 22) - 1}px`
+                        : `${((row._level - 4) * 22) - 1}px`,
                   }}
                 />
               )}
@@ -427,7 +427,7 @@ export default {
                 <i
                   class={`${this.prefixCls}--tree-level3-line`}
                   style={{
-                    left: `${(row._level - 3) * 33 + 1}px`,
+                    left: `${((row._level - 3) * 33) + 1}px`,
                   }}
                 />
               )}
@@ -441,8 +441,8 @@ export default {
                   style={{
                     left:
                       row._level < 6
-                        ? `${(row._level - 3) * 33 + 1}px`
-                        : `${(row._level - 4) * 33 + 1}px`,
+                        ? `${((row._level - 3) * 33) + 1}px`
+                        : `${((row._level - 4) * 33) + 1}px`,
                   }}
                 />
               )}
@@ -641,7 +641,7 @@ export default {
                       style="margin-left: 0px; display: inline-block;"
                       v-show={
                         this.table.expandType &&
-                        column.prop == this.table.expandColumn
+                        column.prop === this.table.expandColumn
                       }
                     >
                       <span class="zk-table__cell-inner">
@@ -687,7 +687,7 @@ export default {
                           <i
                             class={`${this.prefixCls}--expand-left-line`}
                             style={{
-                              marginLeft: `${(row._level - 1) * 24 + 1}px`,
+                              marginLeft: `${((row._level - 1) * 24) + 1}px`,
                             }}
                           />
                         )}

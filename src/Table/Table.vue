@@ -50,7 +50,7 @@ function getBodyData(
   isFold,
   level = 1,
   isExpanded,
-  _parentIndex
+  _parentIndex,
 ) {
   let bodyData = [];
   data.forEach((row, index) => {
@@ -69,7 +69,7 @@ function getBodyData(
       _isFold: isFold,
       _childrenLen: childrenLen,
       _normalIndex: index + 1,
-      _parentIndex: _parentIndex ? _parentIndex : '',
+      _parentIndex: _parentIndex ? () => _parentIndex : '',
       ...row,
     });
     if (isTreeType) {
@@ -82,8 +82,8 @@ function getBodyData(
             isFold,
             level + 1,
             isExpanded,
-            bodyData[index]._normalIndex
-          )
+            bodyData[index]._normalIndex,
+          ),
         );
       }
     }
@@ -102,7 +102,7 @@ function initialState(table) {
       table.isFold,
       1,
       table.isExpanded,
-      false
+      false,
     ),
   };
 }
@@ -165,7 +165,7 @@ function initialColumns(table, clientWidth) {
   if (!isScrollX) {
     const extraWidth = clientWidth - totalWidth;
     const averageExtraWidth = Math.floor(extraWidth / minWidthColumns.length);
-    minWidthColumns.forEach(column => {
+    minWidthColumns.forEach((column) => {
       column.computedWidth = column.minWidth + averageExtraWidth;
     });
   }
@@ -225,7 +225,7 @@ export default {
     },
     expandColumnNum: {
       type: Number,
-      defalut: 1
+      defalut: 1,
     },
     accountColumn: {
       type: String,

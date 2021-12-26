@@ -23,7 +23,7 @@ export default {
       const values = rows.map(row => Number(row[prop]));
       const precisions = [];
       let notNumber = true;
-      values.forEach(value => {
+      values.forEach((value) => {
         if (!isNaN(value)) {
           notNumber = false;
           const decimal = value.toString().split('.')[1];
