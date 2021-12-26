@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="tree-wrapper">
     <!-- <ul class="switch-list">
       <li class="switch-item" v-for="item in propList">
         <span>{{ item.name }}: </span>
@@ -103,39 +103,39 @@ export default {
           main_account: 'test',
           sub_account_list: [
             {
-                sub_account_user_id: "b6160fc0-16cf-4cb6-a1ac-dd8647958f70",
+                sub_account_user_id: "1",
                 sub_account_user_name: "liulaogen",
                 sub_account_display_name: "liulaogen",
                 sub_account_relation_status: 1,
                 sub_account_relation_time: 1638685732000,
-                org_id: "fbd51976-b918-4f0b-85d5-948134f985b0",
+                org_id: "1",
                 org_name: "123233"
             },
             {
-                sub_account_user_id: "48ac3e85-88a3-4dbf-8233-0b692d4b0d3f",
+                sub_account_user_id: "2",
                 sub_account_user_name: "jinmantang",
                 sub_account_display_name: "jinmantang",
                 sub_account_relation_status: 1,
                 sub_account_relation_time: 1638686832000,
-                org_id: "fbd51976-b918-4f0b-85d5-948134f985b0",
+                org_id: "1",
                 org_name: "123233"
             },
             {
-                sub_account_user_id: "143113d4-d9c7-4d8f-beff-588b6d64e7a4",
+                sub_account_user_id: "3",
                 sub_account_user_name: "zhangkanjia",
                 sub_account_display_name: "zhangkanjia",
                 sub_account_relation_status: 1,
                 sub_account_relation_time: 1639551093000,
-                org_id: "fbd51976-b918-4f0b-85d5-948134f985b0",
+                org_id: "1",
                 org_name: "123233"
             },
             {
-                sub_account_user_id: "f2f9ff74-cfa9-4149-9a61-1a3d68445847",
+                sub_account_user_id: "4",
                 sub_account_user_name: "liumanjiang",
                 sub_account_display_name: "liumanjiang",
                 sub_account_relation_status: 1,
                 sub_account_relation_time: 1639551207000,
-                org_id: "fbd51976-b918-4f0b-85d5-948134f985b0",
+                org_id: "1",
                 org_name: "123233"
             }
           ],
@@ -195,6 +195,44 @@ export default {
                   ],
                 },
               ],
+              sub_account_list: [
+                {
+                    sub_account_user_id: "1",
+                    sub_account_user_name: "liulaogen",
+                    sub_account_display_name: "liulaogen",
+                    sub_account_relation_status: 1,
+                    sub_account_relation_time: 1638685732000,
+                    org_id: "1",
+                    org_name: "123233"
+                },
+                {
+                    sub_account_user_id: "2",
+                    sub_account_user_name: "jinmantang",
+                    sub_account_display_name: "jinmantang",
+                    sub_account_relation_status: 1,
+                    sub_account_relation_time: 1638686832000,
+                    org_id: "1",
+                    org_name: "123233"
+                },
+                {
+                    sub_account_user_id: "3",
+                    sub_account_user_name: "zhangkanjia",
+                    sub_account_display_name: "zhangkanjia",
+                    sub_account_relation_status: 1,
+                    sub_account_relation_time: 1639551093000,
+                    org_id: "1",
+                    org_name: "123233"
+                },
+                {
+                    sub_account_user_id: "4",
+                    sub_account_user_name: "liumanjiang",
+                    sub_account_display_name: "liumanjiang",
+                    sub_account_relation_status: 1,
+                    sub_account_relation_time: 1639551207000,
+                    org_id: "1",
+                    org_name: "123233"
+                }
+              ]
             },
             {
               name: 'Taki',
@@ -325,11 +363,13 @@ export default {
 </script>
 
 <style scoped lang="less">
-  * {
-    margin: 0;
-    padding: 0;
-  }
-
+* {
+  margin: 0;
+  padding: 0;
+}
+.tree-wrapper {
+  overflow-y: overlay;
+  width: calc(~"100vw - 30px");
   .switch-list {
     margin: 20px 0;
     list-style: none;
@@ -372,4 +412,5 @@ export default {
     -ms-flex-align: center;
     align-items: center;
   }
+}
 </style>

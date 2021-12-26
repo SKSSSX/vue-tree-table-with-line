@@ -1,4 +1,4 @@
-# vue-table-with-tree-grid
+# vue-tree-table-with-line
 vue树形表格组件（带层级线）
 > A table (with tree-grid) component for Vue.js 2.0. (Its style extends [@iView](https://github.com/iview/iview))
 
@@ -11,20 +11,20 @@ vue树形表格组件（带层级线）
 Use npm:
 
 ```shell
-npm i vue-table-with-tree-grid -S
+npm i vue-tree-table-with-line -S
 ```
 
 Or use yarn:
 
 ```shell
-yarn add vue-table-with-tree-grid
+yarn add vue-tree-table-with-line
 ```
 
 ## Usage
 
 ```javascript
 import Vue from 'vue'
-import ZkTable from 'vue-table-with-tree-grid'
+import ZkTable from 'vue-tree-table-with-line'
 
 Vue.use(ZkTable)
 ```
@@ -33,7 +33,7 @@ Or
 
 ```javascript
 import Vue from 'vue'
-import ZkTable from 'vue-table-with-tree-grid'
+import ZkTable from 'vue-tree-table-with-line'
 
 Vue.component(ZkTable.name, ZkTable)
 ```
@@ -49,6 +49,7 @@ more information please see [example...](https://github.com/MisterTaki/vue-table
 | data | 表格各行的数据 | Array | - | [] |
 | empty-text | 表格数据为空时显示的文字 | String | - | '暂无数据' |
 | columns | 表格各列的配置（具体见下文：Columns Configs） | Array | - | [] |
+| show-account | 是否展示主账号 | Boolean | - | false |
 | show-header | 是否显示表头 | Boolean | - | true |
 | show-index | 是否显示数据索引 | Boolean | - | false |
 | index-text | 数据索引名称 | String | - | '序号' |
@@ -59,10 +60,16 @@ more information please see [example...](https://github.com/MisterTaki/vue-table
 | stripe | 是否显示间隔斑马纹 | Boolean | - | false |
 | border | 是否显示纵向边框 | Boolean | - | false |
 | show-row-hover | 鼠标悬停时，是否高亮当前行 | Boolean | - | true |
+| show-row-click | 鼠标点击时，是否高亮当前行 | Boolean | - | true |
 | tree-type | 是否为树形表格 | Boolean | - | false |
 | children-prop | 树形表格中遍历的属性名称 | String | - | 'children' |
 | is-fold | 树形表格中父级是否默认折叠 | Boolean | - | true |
 | expand-type | 是否为展开行类型表格（为 True 时，需要添加名称为 '$expand' 的[作用域插槽](https://cn.vuejs.org/v2/guide/components.html#作用域插槽), 它可以获取到 row, rowIndex) | Boolean | - | false |
+| expand-column | 展开按钮所在列的名字 | String | - | '' |
+| expand-column-num | 展开行处于第几列 | Number | - | 1 |
+| is-expanded | 展开行是否全部展开 | Boolean | - | true |
+| selected-node | 模糊搜索选中的节点 | String | - | '' |
+| account-column | 主账号列的名字 | String | - | '' |
 | selection-type | 是否为多选类型表格 | Boolean | - | false |
 | row-key | 行数据的 Key，用来优化 Table 的渲染 | Function | row, rowIndex | rowIndex |
 | row-class-name | 额外的表格行的类名 | String, Function | row, rowIndex | - |

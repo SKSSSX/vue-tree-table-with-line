@@ -11,11 +11,11 @@
       aria-autocomplete="list"
       v-model="keywords"
     />
-    <span class="el-input__suffix">
+    <!-- <span class="el-input__suffix">
       <span class="el-input__suffix-inner">
         <i class="el-icon-search el-input__icon" />
       </span>
-    </span>
+    </span> -->
   </div>
 </template>
 <script>

@@ -1,5 +1,5 @@
 {
-  "name": "vue-table-with-tree-grid",
+  "name": "vue-tree-table-with-line",
   "version": "0.2.4",
   "description": "A table (with tree-grid) component for Vue.js 2.0. (Its style extends iView)",
   "keywords": [
@@ -16,7 +16,7 @@
     "type": "git",
     "url": "https://github.com/MisterTaki/vue-table-with-tree-gird"
   },
-  "main": "lib/vue-table-with-tree-grid.js",
+  "main": "lib/vue-tree-table-with-line.js",
   "files": [
     "lib",
     "example",
