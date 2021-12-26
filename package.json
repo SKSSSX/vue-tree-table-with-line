@@ -1,20 +1,22 @@
 {
   "name": "vue-tree-table-with-line",
-  "version": "0.2.4",
-  "description": "A table (with tree-grid) component for Vue.js 2.0. (Its style extends iView)",
+  "version": "0.1.0",
+  "description": "A table (with tree-grid) component (with level line) for Vue.js 2.0. (Its style extends iView)",
   "keywords": [
     "vue",
+    "tree-table",
+    "树形组件",
     "vue-table",
     "tree-grid",
     "vue-component",
     "vue-jsx"
   ],
-  "author": "GaoQi <taki.gaoqi@outlook.com>",
-  "homepage": "https://github.com/MisterTaki/vue-table-with-tree-gird",
-  "bugs": "https://github.com/MisterTaki/vue-table-with-tree-gird/issues",
+  "author": "sanks <1270256946@qq.com>",
+  "homepage": "https://github.com/SKSSSX/vue-tree-table-with-line",
+  "bugs": "https://github.com/SKSSSX/vue-tree-table-with-line/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MisterTaki/vue-table-with-tree-gird"
+    "url": "https://github.com/SKSSSX/vue-tree-table-with-line"
   },
   "main": "lib/vue-tree-table-with-line.js",
   "files": [
