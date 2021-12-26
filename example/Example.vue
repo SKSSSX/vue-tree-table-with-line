@@ -51,7 +51,7 @@
             :is-expanded="accountProps.isExpanded"
             :expand-type="accountProps.expandType"
             :selection-type="accountProps.selectionType">
-            <template slot="operation" slot-scope="scope">
+            <template slot="operation">
               <button>解除关联</button>
               <button>变更组织</button>
             </template>
@@ -66,8 +66,9 @@
 </template>
 
 <script>
-import TreeFilter from './TreeFilter/TreeFilter.vue';
+import TreeFilter from './TreeFilter/TreeFilter';
 import ZkSwitch from './Switch/Switch';
+
 export default {
   name: 'example',
   components: {
@@ -103,41 +104,41 @@ export default {
           main_account: 'test',
           sub_account_list: [
             {
-                sub_account_user_id: "1",
-                sub_account_user_name: "liulaogen",
-                sub_account_display_name: "liulaogen",
-                sub_account_relation_status: 1,
-                sub_account_relation_time: 1638685732000,
-                org_id: "1",
-                org_name: "123233"
+              sub_account_user_id: '1',
+              sub_account_user_name: 'liulaogen',
+              sub_account_display_name: 'liulaogen',
+              sub_account_relation_status: 1,
+              sub_account_relation_time: 1638685732000,
+              org_id: '1',
+              org_name: '123233',
             },
             {
-                sub_account_user_id: "2",
-                sub_account_user_name: "jinmantang",
-                sub_account_display_name: "jinmantang",
-                sub_account_relation_status: 1,
-                sub_account_relation_time: 1638686832000,
-                org_id: "1",
-                org_name: "123233"
+              sub_account_user_id: '2',
+              sub_account_user_name: 'jinmantang',
+              sub_account_display_name: 'jinmantang',
+              sub_account_relation_status: 1,
+              sub_account_relation_time: 1638686832000,
+              org_id: '1',
+              org_name: '123233',
             },
             {
-                sub_account_user_id: "3",
-                sub_account_user_name: "zhangkanjia",
-                sub_account_display_name: "zhangkanjia",
-                sub_account_relation_status: 1,
-                sub_account_relation_time: 1639551093000,
-                org_id: "1",
-                org_name: "123233"
+              sub_account_user_id: '3',
+              sub_account_user_name: 'zhangkanjia',
+              sub_account_display_name: 'zhangkanjia',
+              sub_account_relation_status: 1,
+              sub_account_relation_time: 1639551093000,
+              org_id: '1',
+              org_name: '123233',
             },
             {
-                sub_account_user_id: "4",
-                sub_account_user_name: "liumanjiang",
-                sub_account_display_name: "liumanjiang",
-                sub_account_relation_status: 1,
-                sub_account_relation_time: 1639551207000,
-                org_id: "1",
-                org_name: "123233"
-            }
+              sub_account_user_id: '4',
+              sub_account_user_name: 'liumanjiang',
+              sub_account_display_name: 'liumanjiang',
+              sub_account_relation_status: 1,
+              sub_account_relation_time: 1639551207000,
+              org_id: '1',
+              org_name: '123233',
+            },
           ],
           children: [
             {
@@ -197,42 +198,42 @@ export default {
               ],
               sub_account_list: [
                 {
-                    sub_account_user_id: "1",
-                    sub_account_user_name: "liulaogen",
-                    sub_account_display_name: "liulaogen",
-                    sub_account_relation_status: 1,
-                    sub_account_relation_time: 1638685732000,
-                    org_id: "1",
-                    org_name: "123233"
+                  sub_account_user_id: '1',
+                  sub_account_user_name: 'liulaogen',
+                  sub_account_display_name: 'liulaogen',
+                  sub_account_relation_status: 1,
+                  sub_account_relation_time: 1638685732000,
+                  org_id: '1',
+                  org_name: '123233',
                 },
                 {
-                    sub_account_user_id: "2",
-                    sub_account_user_name: "jinmantang",
-                    sub_account_display_name: "jinmantang",
-                    sub_account_relation_status: 1,
-                    sub_account_relation_time: 1638686832000,
-                    org_id: "1",
-                    org_name: "123233"
+                  sub_account_user_id: '2',
+                  sub_account_user_name: 'jinmantang',
+                  sub_account_display_name: 'jinmantang',
+                  sub_account_relation_status: 1,
+                  sub_account_relation_time: 1638686832000,
+                  org_id: '1',
+                  org_name: '123233',
                 },
                 {
-                    sub_account_user_id: "3",
-                    sub_account_user_name: "zhangkanjia",
-                    sub_account_display_name: "zhangkanjia",
-                    sub_account_relation_status: 1,
-                    sub_account_relation_time: 1639551093000,
-                    org_id: "1",
-                    org_name: "123233"
+                  sub_account_user_id: '3',
+                  sub_account_user_name: 'zhangkanjia',
+                  sub_account_display_name: 'zhangkanjia',
+                  sub_account_relation_status: 1,
+                  sub_account_relation_time: 1639551093000,
+                  org_id: '1',
+                  org_name: '123233',
                 },
                 {
-                    sub_account_user_id: "4",
-                    sub_account_user_name: "liumanjiang",
-                    sub_account_display_name: "liumanjiang",
-                    sub_account_relation_status: 1,
-                    sub_account_relation_time: 1639551207000,
-                    org_id: "1",
-                    org_name: "123233"
-                }
-              ]
+                  sub_account_user_id: '4',
+                  sub_account_user_name: 'liumanjiang',
+                  sub_account_display_name: 'liumanjiang',
+                  sub_account_relation_status: 1,
+                  sub_account_relation_time: 1639551207000,
+                  org_id: '1',
+                  org_name: '123233',
+                },
+              ],
             },
             {
               name: 'Taki',
@@ -335,8 +336,8 @@ export default {
   methods: {
     // 增加节点每一层级是否是最后一个的属性
     handleNode(array) {
-      let recursionList = (data, _last) => {
-        let temp = data.map((item, index, arr) => {
+      const recursionList = (data, _last) => {
+        const temp = data.map((item, index, arr) => {
           item._last = [..._last, index === arr.length - 1];
           if (
             item.children &&
@@ -353,7 +354,7 @@ export default {
     },
     filterData(value) {
       this.data2 = this.handleNode(value);
-    }
+    },
   },
   created() {
     this.data2 = JSON.parse(JSON.stringify(this.data));

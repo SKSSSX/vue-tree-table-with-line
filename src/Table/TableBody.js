@@ -252,12 +252,6 @@ export default {
           if (this.table.showRowClick && row._isSelected) {
             classList.push(`${this.prefixCls}--row-select`);
           }
-          if (
-            this.table.showRowClick &&
-            this.table.selectedNode === row.org_id
-          ) {
-            classList.push(`${this.prefixCls}--row-select`);
-          }
         }
         if (certainType.cell) {
           classList.push(`${this.prefixCls}__body-cell`);
@@ -280,11 +274,6 @@ export default {
         }
       }
       return classList.join(' ');
-    }
-
-    // 计算当前节点距离它的父节点差了多少行
-    function coculateRows(row, rowIndex) {
-      return (rowIndex - 1) * 48 + 24;
     }
 
     // 根据type渲染单元格Cell
@@ -350,23 +339,11 @@ export default {
               // borderLeft: '1px solid #000'
             }}
           >
-            {row._level > 1 &&
-              row._childrenLen > 0 && (
+            {row._level > 1 && (
                 <i
                   class={`${this.prefixCls}--tree-top-line`}
                   style={{
                     marginLeft: `${(row._level - 1) * 24}px`,
-                  }}
-                />
-              )}
-            {row._level > 1 &&
-              row._childrenLen === 0 && (
-                <i
-                  class={`${this.prefixCls}--tree-top-line`}
-                  style={{
-                    marginLeft: `${(row._level - 1) * 24}px`,
-                    /* height: coculateRows(row, rowIndex) + 'px',
-                    top: 0 - coculateRows(row, rowIndex) + 22 + 'px', */
                   }}
                 />
               )}
@@ -388,7 +365,7 @@ export default {
                 />
               )}
             {row._level > 1 &&
-              !row._lastChild && (
+              !row._last[row._level - 1] && (
                 <i
                   class={`${this.prefixCls}--tree-left-bottom-line`}
                   style={{
@@ -396,29 +373,20 @@ export default {
                   }}
                 />
               )}
-            {row._level === 3 &&
-              !row._parentLastChild && (
-                <i
-                  class={`${this.prefixCls}--tree-level1-line`}
-                  style={{
-                    marginLeft: `${(row._level - 1) * 24}px`,
-                    left: `${(row._level - 2) * -29}px`,
-                  }}
-                />
-              )}
-            {row._level > 3 &&
+            {row._level > 2 &&
               row._last &&
               !row._last[1] && (
                 <i
                   class={`${this.prefixCls}--tree-level1-line`}
                   style={{
                     marginLeft: `${(row._level - 1) * 24}px`,
-                    left: `${(row._level - 2) * -24 - 5}px`,
+                    left: `${(row._level - 2) * (-24) - 5}px`,
                   }}
                 />
               )}
             {row._level === 4 &&
-              !row._parentLastChild && (
+              row._last &&
+              !row._last[2] && (
                 <i
                   class={`${this.prefixCls}--tree-level2-line`}
                   style={{
@@ -454,7 +422,8 @@ export default {
                 />
               )}
             {row._level === 5 &&
-              !row._parentLastChild && (
+              row._last &&
+              !row._last[3] && (
                 <i
                   class={`${this.prefixCls}--tree-level3-line`}
                   style={{

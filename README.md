@@ -68,7 +68,6 @@ more information please see [example...](https://github.com/MisterTaki/vue-table
 | expand-column | 展开按钮所在列的名字 | String | - | '' |
 | expand-column-num | 展开行处于第几列 | Number | - | 1 |
 | is-expanded | 展开行是否全部展开 | Boolean | - | true |
-| selected-node | 模糊搜索选中的节点 | String | - | '' |
 | account-column | 主账号列的名字 | String | - | '' |
 | selection-type | 是否为多选类型表格 | Boolean | - | false |
 | row-key | 行数据的 Key，用来优化 Table 的渲染 | Function | row, rowIndex | rowIndex |

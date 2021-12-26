@@ -50,7 +50,6 @@ function getBodyData(
   isFold,
   level = 1,
   isExpanded,
-  _lastChild,
   _parentIndex
 ) {
   let bodyData = [];
@@ -71,8 +70,6 @@ function getBodyData(
       _childrenLen: childrenLen,
       _normalIndex: index + 1,
       _parentIndex: _parentIndex ? _parentIndex : '',
-      _lastChild: index === data.length - 1,
-      _parentLastChild: _lastChild,
       ...row,
     });
     if (isTreeType) {
@@ -85,7 +82,6 @@ function getBodyData(
             isFold,
             level + 1,
             isExpanded,
-            index === data.length - 1 || bodyData[index]._lastChild,
             bodyData[index]._normalIndex
           )
         );
@@ -242,10 +238,6 @@ export default {
     selectionType: {
       type: Boolean,
       default: true,
-    },
-    selectedNode: {
-      type: String,
-      default: '',
     },
     emptyText: {
       type: String,
