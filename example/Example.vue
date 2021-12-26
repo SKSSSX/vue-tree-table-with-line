@@ -6,7 +6,7 @@
         <zk-switch v-model="props[item.name]"></zk-switch>
       </li>
     </ul> -->
-    <tree-filter :treeData="data" @recieveData="handleData"></tree-filter>
+    <tree-filter :treeData="data" @recieveData="filterData"></tree-filter>
     <zk-table
       ref="table"
       sum-text="sum"
@@ -295,23 +295,11 @@ export default {
     },
   },
   methods: {
-    // 查找到组织
-    filterOrgan(array) {
+    // 增加节点每一层级是否是最后一个的属性
+    handleNode(array) {
       let recursionList = (data, _last) => {
-        data.map((item, index, arr) => {
+        let temp = data.map((item, index, arr) => {
           item._last = [..._last, index === arr.length - 1];
-          /* if (item.sub_account_total > 0) {
-            this.getSubAccount(item.org_id, this.enterpriseId).then(child => {
-              if (child && child.length > 0) {
-                child.map(sub => {
-                  sub.showErr = false;
-                  sub.errMsg = '';
-                  sub.isEdit = false;
-                });
-              }
-              item.sub_account_list = child;
-            });
-          } */
           if (
             item.children &&
             item.children instanceof Array &&
@@ -319,17 +307,19 @@ export default {
           ) {
             recursionList(item.children, item._last);
           }
+          return item;
         });
+        return temp;
       };
-      recursionList(array, []);
+      return recursionList(array, []);
     },
-    handleData(value) {
-      this.data2 = value;
+    filterData(value) {
+      this.data2 = this.handleNode(value);
     }
   },
   created() {
     this.data2 = JSON.parse(JSON.stringify(this.data));
-    this.filterOrgan(this.data2);
+    this.handleNode(this.data2);
   },
 };
 </script>

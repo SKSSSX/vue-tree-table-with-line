@@ -31,7 +31,7 @@ export default {
   data() {
     return {
       keywords: '',
-      kkk: this.treeData,
+      originData: this.treeData,
     };
   },
   computed: {
@@ -66,7 +66,7 @@ export default {
         return !node.parentName
       })
     },
-    filterOrgan(array, final) {
+    filterTree(array, final) {
       // 1.转换成列表
       const newData = this.treeToList(array);
       console.log(newData);
@@ -78,22 +78,6 @@ export default {
       // 3.将列表再转换成树
       const filterTree = this.listToTree(filterArray);
       console.log(filterTree);
-      /* let recursionList = (data, final) => {
-        data.map((item, index, arr) => {
-          if (final.includes(item.name)) {
-            if (
-              item.children &&
-              item.children instanceof Array &&
-              item.children.length
-            ) {
-              recursionList(item.children, final);
-            }
-          } else {
-            arr.splice(index, 1);
-          }
-        });
-      }; */
-      // recursionList(newData, final);
       return filterTree;
     },
   },
@@ -101,28 +85,26 @@ export default {
     let search = document.getElementsByTagName('input')[0];
     search.oninput = () => {
       if (this.keywords) {
-        let jj = this.treeFindPath(this.kkk, node => node.name.indexOf(this.keywords) > -1);
+        let jj = this.treeFindPath(this.originData, node => node.name.indexOf(this.keywords) > -1);
         let final = [];
         jj.map(item => {
           let temp = [...item];
           final = final.concat(temp);
         });
-        this.filterOrgan(this.kkk, uniq(final));
-        this.$emit('recieveData', this.kkk);
-      } else {
-        console.log(this.treeData);
+        this.filterTree(this.originData, uniq(final));
+        this.$emit('recieveData', this.originData);
       }
     }
     let btn = document.getElementsByClassName('el-input__suffix')[0];
     btn.onclick = () => {
-      let result = this.treeFindPath(this.kkk, node => node.name.indexOf(this.keywords) > -1);
+      let result = this.treeFindPath(this.originData, node => node.name.indexOf(this.keywords) > -1);
       let final = [];
       result.map(item => {
         let temp = [...item];
         final = final.concat(temp);
       });
-      this.filterOrgan(this.kkk, uniq(final));
-      this.$emit('recieveData', this.kkk);
+      this.filterTree(this.originData, uniq(final));
+      this.$emit('recieveData', this.originData);
     }
   },
 };
