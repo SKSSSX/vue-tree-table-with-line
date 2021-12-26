@@ -49,8 +49,36 @@ export default {
       }
       return result;
     },
+    // 树转换为列表
+    treeToList (tree, result = [], parentName = "") {
+      tree.forEach(node => {
+        node.parentName = parentName;
+        result.push(node)
+        node.children && this.treeToList(node.children, result, node.name);
+      })
+      return result;
+    },
+    // 列表转换回树
+    listToTree (list) {
+      let info = list.reduce((map, node) => (map[node.name] = node, node.children = [], map), {})
+      return list.filter(node => {
+        info[node.parentName] && info[node.parentName].children.push(node)
+        return !node.parentName
+      })
+    },
     filterOrgan(array, final) {
-      let recursionList = (data, final) => {
+      // 1.转换成列表
+      const newData = this.treeToList(array);
+      console.log(newData);
+      // 2.将不相关的节点删除掉
+      const filterArray = newData.filter(item => {
+        return final.includes(item.name);
+      });
+      console.log(filterArray, final);
+      // 3.将列表再转换成树
+      const filterTree = this.listToTree(filterArray);
+      console.log(filterTree);
+      /* let recursionList = (data, final) => {
         data.map((item, index, arr) => {
           if (final.includes(item.name)) {
             if (
@@ -64,8 +92,9 @@ export default {
             arr.splice(index, 1);
           }
         });
-      };
-      recursionList(array, final);
+      }; */
+      // recursionList(newData, final);
+      return filterTree;
     },
   },
   mounted() {
