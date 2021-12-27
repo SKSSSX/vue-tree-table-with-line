@@ -1,6 +1,6 @@
 # vue-tree-table-with-line
 vue树形表格组件（带层级线）
-> A table (with tree-grid) component for Vue.js 2.0. (Its style extends [@iView](https://github.com/iview/iview))
+> A table (with tree-grid, level line) component for Vue.js 2.0. (Its style extends [@iView](https://github.com/iview/iview))
 
 ## Example
 

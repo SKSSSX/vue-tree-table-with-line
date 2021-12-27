@@ -1,7 +1,7 @@
 {
   "name": "vue-tree-table-with-line",
-  "version": "0.1.2",
-  "description": "A table (with tree-grid) component (with level line) for Vue.js 2.0. (Its style extends iView)",
+  "version": "0.1.3",
+  "description": "A table (with tree-grid, level line) component for Vue.js 2.0. (Its style extends iView)",
   "keywords": [
     "vue",
     "tree-table",
