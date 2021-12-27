@@ -1,7 +1,22 @@
-# We'll let Git's auto-detection algorithm infer if a file is text. If it is,
-# enforce LF line endings regardless of OS or git configurations.
 * text=auto eol=lf
 
-# Isolate binary files in case the auto-detection algorithm fails and
-# marks them as text files (which could brick them).
+*.txt         text eol=lf
+*.xml         text eol=lf
+*.json        text eol=lf
+*.properties  text eol=lf
+*.conf        text eol=lf
+*.md          text eol=lf
+*.log         text eol=lf
+
+*.vue         text eol=lf
+*.js          text eol=lf
+*.ts          text eol=lf
+*.tsx         text eol=lf
+*.tpl         text eol=lf
+*.css         text eol=lf
+
+*.awk  text eol=lf
+*.sed  text eol=lf
+*.sh   text eol=lf
+
 *.{png,jpg,jpeg,gif,webp,woff,woff2} binary
