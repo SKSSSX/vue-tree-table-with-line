@@ -365,6 +365,7 @@ export default {
                 />
               )}
             {row._level > 1 &&
+              !row._lastChild &&
               !row._last[row._level - 1] && (
                 <i
                   class={`${this.prefixCls}--tree-left-bottom-line`}
